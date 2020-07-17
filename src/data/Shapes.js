@@ -9,11 +9,11 @@ export const Shapes = [
     },
     {
         id: 2,
-        value: "semi-circle"
+        value: "semicircle"
     },
     {
         id: 3,
-        value: "quarter-circle"
+        value: "quartercircle"
     },
     {
         id: 4,
