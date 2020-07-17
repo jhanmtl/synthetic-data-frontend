@@ -14,6 +14,7 @@ import {Characters} from "./data/Characters";
 import Paper from '@material-ui/core/Paper';
 import './App.css'
 
+//test comment
 
 
 class App extends React.Component{
