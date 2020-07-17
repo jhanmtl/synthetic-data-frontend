@@ -1,38 +1,62 @@
+body{
+  background-color: lightgray;
+  position:relative;
+  height: 100vh;
+  width:100vw;
+  /*border:1px solid;*/
+}
 .App {
-  text-align: center;
+  box-sizing: border-box;
+
+  width: 1500px;
+  height: 448px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: -224px 0 0 -750px;
+  /*border:1px solid;*/
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* fraction*/
+  /*border:1px solid red;*/
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dropdownPanel{
+  height:500px;
+  width:200px;
+  /*border:1px solid;*/
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.sliderPanel{
+  margin-top:35px;
+  height:465px;
+  width:600px;
+  /*border:1px solid;*/
 }
 
-.App-link {
-  color: #61dafb;
+.frame{
+  margin-top:35px;
+  height:410px;
+  width:410px;
+  /*border:1px solid;*/
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.photo{
+  height:410px;
+  width:410px
 }
+
+.table{
+  margin-top:35px;
+  margin-right:10px;
+  margin-left:40px;
+  height:410px;
+  width:230px;
+  /*border:1px solid;*/
+}
+
