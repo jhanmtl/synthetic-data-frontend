@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/synthetic-data-frontend/static/css/main.10ab5291.chunk.css",
+    "main.js": "/synthetic-data-frontend/static/js/main.1b214bdf.chunk.js",
+    "main.js.map": "/synthetic-data-frontend/static/js/main.1b214bdf.chunk.js.map",
+    "runtime-main.js": "/synthetic-data-frontend/static/js/runtime-main.2804bf3f.js",
+    "runtime-main.js.map": "/synthetic-data-frontend/static/js/runtime-main.2804bf3f.js.map",
+    "static/js/2.e37aaece.chunk.js": "/synthetic-data-frontend/static/js/2.e37aaece.chunk.js",
+    "static/js/2.e37aaece.chunk.js.map": "/synthetic-data-frontend/static/js/2.e37aaece.chunk.js.map",
+    "index.html": "/synthetic-data-frontend/index.html",
+    "precache-manifest.4436d1271f3474a8ff5e7bbb29c47b9c.js": "/synthetic-data-frontend/precache-manifest.4436d1271f3474a8ff5e7bbb29c47b9c.js",
+    "service-worker.js": "/synthetic-data-frontend/service-worker.js",
+    "static/css/main.10ab5291.chunk.css.map": "/synthetic-data-frontend/static/css/main.10ab5291.chunk.css.map",
+    "static/js/2.e37aaece.chunk.js.LICENSE.txt": "/synthetic-data-frontend/static/js/2.e37aaece.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2804bf3f.js",
+    "static/js/2.e37aaece.chunk.js",
+    "static/css/main.10ab5291.chunk.css",
+    "static/js/main.1b214bdf.chunk.js"
+  ]
+}
