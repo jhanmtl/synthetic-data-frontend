@@ -71,8 +71,11 @@ class App extends React.Component{
 
       for (let i=0;i<this.state.numImg;i++) {
           setTimeout(()=>{
-                    axios.post("http://localhost:8000/post-form/", this.state)
+                    axios.post("https://syndata.herokuapp.com/post-form/", this.state)
+                   // axios.post("http://localhost:8000/post-form/", this.state)
+
                     .then(res => {
+
                         const imgReceived=res.data.img
                         const infoReceived=Object.entries(res.data.info)
                         this.setState({img: imgReceived,imgInfo:infoReceived})
@@ -84,9 +87,6 @@ class App extends React.Component{
                         }
                     }, i*250)
             }
-
-      // this.setState({disableButtons:false})
-
     }
 
     handleReset=()=>{

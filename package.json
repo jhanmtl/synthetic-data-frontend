@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://jhanmtl.github.io/synthetic-data-frontend/",
+  "homepage": "https://jhanmtl.github.io/synthetic-data-frontend/",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@testing-library/jest-dom": "^4.2.4",
