@@ -102,7 +102,7 @@ class App extends React.Component{
                     <div className="table">
                         <MyTable info={this.state.imgInfo} />
                         <br/>
-                        <MyCheckbox onChange={this.handleCheckChange} name="drawBbox" disabled={this.state.disableButtons}> draw bounding box on image </MyCheckbox>
+                        <MyCheckbox onChange={this.handleCheckChange} name="drawBbox" disabled={this.state.disableButtons} checked={this.state.drawBbox}> draw bounding box on image </MyCheckbox>
                     </div>
 
                     <div className="frame">

@@ -32,6 +32,7 @@ export function MyCheckbox(props) {
                             size="small"
                             onChange={props.onChange}
                             disabled={props.disabled}
+                            checked={props.checked}
                         />
                     }
                     label={props.children}
