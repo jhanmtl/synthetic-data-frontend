@@ -48,14 +48,18 @@ class App extends React.Component{
 
         sessionStarted:false,
         backendConnected:false,
-        imgTransmitted:false
 
-        }
+        };
+
+    // const link="https://syndata.herokuapp.com/post-form/";
+    this.link="http://localhost:8000/post-form/";
+
+
     }
 
     componentDidMount() {
       this.setState({backendConnected:false,sessionStarted:true,disableButtons:true});
-      axios.post("http://localhost:8000/post-form/", this.state)
+      axios.post(this.link, this.state)
         .then(res => {this.setState({backendConnected:true,disableButtons:false,})})
 
       this.initialState=this.state;
@@ -75,12 +79,11 @@ class App extends React.Component{
     }
 
     handleGenerate=()=>{
+      this.setState({disableButtons:true})
 
       for (let i=0;i<this.state.numImg;i++) {
           setTimeout(()=>{
-                    // axios.post("https://syndata.herokuapp.com/post-form/", this.state)
-                   axios.post("http://localhost:8000/post-form/", this.state)
-
+                    axios.post(this.link, this.state)
                     .then(res => {
                         const imgReceived=res.data.img
                         const infoReceived=Object.entries(res.data.info)
