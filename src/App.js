@@ -6,6 +6,7 @@ import {RangeSlider} from "./components/RangeSlider";
 import {MyButton} from "./components/MyButton";
 import {MyTable} from "./components/MyTable";
 import {MyCheckbox} from "./components/MyCheckbox";
+import {MyProgress} from "./components/MyProgress";
 
 import {Shapes} from "./data/Shapes";
 import {Colors} from "./data/Colors";
@@ -45,11 +46,20 @@ class App extends React.Component{
         disableButtons:false,
         drawBbox:false,
 
+        sessionStarted:false,
+        backendConnected:false,
+        imgTransmitted:false
+
         }
     }
 
     componentDidMount() {
+      this.setState({backendConnected:false,sessionStarted:true,disableButtons:true});
+      axios.post("http://localhost:8000/post-form/", this.state)
+        .then(res => {this.setState({backendConnected:true,disableButtons:false,})})
+
       this.initialState=this.state;
+
     }
 
     handleDropDownChange=(event)=>{
@@ -61,25 +71,20 @@ class App extends React.Component{
     }
 
     handleCheckChange=(event)=> {
-        console.log(event.target.checked)
         this.setState({drawBbox: event.target.checked})
     }
 
     handleGenerate=()=>{
 
-      this.setState({disableButtons:true})
-
       for (let i=0;i<this.state.numImg;i++) {
           setTimeout(()=>{
-                    axios.post("https://syndata.herokuapp.com/post-form/", this.state)
-                   // axios.post("http://localhost:8000/post-form/", this.state)
+                    // axios.post("https://syndata.herokuapp.com/post-form/", this.state)
+                   axios.post("http://localhost:8000/post-form/", this.state)
 
                     .then(res => {
-
                         const imgReceived=res.data.img
                         const infoReceived=Object.entries(res.data.info)
-                        this.setState({img: imgReceived,imgInfo:infoReceived})
-                        console.log(this.state.imgInfo)
+                        this.setState({img: imgReceived,imgInfo:infoReceived,backendConnected:true})
                         })
 
                     if (i===this.state.numImg-1){
@@ -90,7 +95,11 @@ class App extends React.Component{
     }
 
     handleReset=()=>{
-      this.setState(this.initialState)
+      const previousConnected=this.state.backendConnected;
+      this.setState(this.initialState);
+      if (previousConnected){
+          this.setState({backendConnected:previousConnected})
+      }
     }
 
     render(){
@@ -106,9 +115,16 @@ class App extends React.Component{
                     </div>
 
                     <div className="frame">
-                        <Paper elevation={9}>
-                        <img className='photo' src={this.state.img} alt="img" style={{margin:0}}/>
-                        </Paper>
+                        <div className="photoContainer">
+                            <Paper elevation={9}>
+                            <img className='photo' src={this.state.img} alt="img" style={{margin:0}}/>
+                            </Paper>
+                        </div>
+
+                        <div className="overlay">
+                            {(this.state.sessionStarted && !this.state.backendConnected)?<MyProgress />:""}
+                        </div>
+
                     </div>
 
                     <div className="sliderPanel">

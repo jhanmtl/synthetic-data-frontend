@@ -18,7 +18,6 @@ export function MyTable(props){
     const parseInfo=(info)=>{
       const entries=Object.entries(info)
       const rows=entries.map(each=>{
-          console.log(each[0],each[1][0],each[1][1])
           return(
             <TableRow key={each[0]}>
               <TableCell align="left">{each[1][0]}</TableCell>
@@ -32,7 +31,6 @@ export function MyTable(props){
 
       return(
       <ThemeProvider theme={theme}>
-        {/*<TableContainer component={Paper}>*/}
         <Paper elevation={6}>
           <Table aria-label="simple table">
             <TableBody>
@@ -40,7 +38,6 @@ export function MyTable(props){
             </TableBody>
           </Table>
         </Paper>
-        {/*</TableContainer>*/}
       </ThemeProvider>
       )
   }

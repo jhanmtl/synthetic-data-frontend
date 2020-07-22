@@ -43,7 +43,19 @@ body{
   margin-top:35px;
   height:410px;
   width:410px;
+  display: grid;
   /*border:1px solid;*/
+}
+
+.photoContainer{
+  grid-area: 1/1;
+}
+
+.overlay{
+  grid-area: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .photo{
