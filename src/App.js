@@ -51,8 +51,8 @@ class App extends React.Component{
 
         };
 
-    // const link="https://syndata.herokuapp.com/post-form/";
-    this.link="http://localhost:8000/post-form/";
+    const link="https://syndata.herokuapp.com/post-form/";
+    // this.link="http://localhost:8000/post-form/";
 
 
     }

@@ -28,7 +28,7 @@ export function MyProgress(){
             </div>
             <br/>
             <InputLabel>
-                initializing backend ...
+                connecting to backend ...
             </InputLabel>
         </div>
     )
